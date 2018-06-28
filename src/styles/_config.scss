@@ -1,0 +1,83 @@
+/* RESET */
+@import '_reset';
+
+/* FONTS */
+@font-face {
+	font-family: 'roboto-regular';
+	src: url('../fnt/roboto-regular.eot');
+	src: url('../fnt/roboto-regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fnt/roboto-regular.woff') format('woff'),
+		 url('../fnt/roboto-regular.ttf') format('truetype'),
+		 url('../fnt/roboto-regular.svg#roboto-regular') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: 'roboto-black';
+	src: url('../fnt/roboto-black.eot');
+	src: url('../fnt/roboto-black.eot?#iefix') format('embedded-opentype'),
+		 url('../fnt/roboto-black.woff') format('woff'),
+		 url('../fnt/roboto-black.ttf') format('truetype'),
+		 url('../fnt/roboto-black.svg#roboto-black') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: 'roboto-bold';
+	src: url('../fnt/roboto-bold.eot');
+	src: url('../fnt/roboto-bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fnt/roboto-bold.woff') format('woff'),
+		 url('../fnt/roboto-bold.ttf') format('truetype'),
+		 url('../fnt/roboto-bold.svg#roboto-bold') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+
+
+$arial:			Arial, Helvetica, sans-serif !default;
+$robotoRegular:	'roboto-regular', Arial, Helvetica, sans-serif !default;
+$robotoBlack:	'roboto-black', Arial, Helvetica, sans-serif !default;
+$robotoBold:	'roboto-bold', Arial, Helvetica, sans-serif !default;
+
+/* MIXINS */
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin box-shadow($format,$h-shadow,$v-shadow,$blur,$spread,$color) {
+	-webkit-box-shadow: $format $h-shadow $v-shadow $blur $spread $color !important;
+	-moz-box-shadow: $format $h-shadow $v-shadow $blur $spread $color !important;
+	-ms-box-shadow: $format $h-shadow $v-shadow $blur $spread $color !important;
+	-o-box-shadow: $format $h-shadow $v-shadow $blur $spread $color !important;
+	box-shadow: $format $h-shadow $v-shadow $blur $spread $color !important;
+}
+
+@mixin transition($property,$duration,$mode,$delay) {
+	-webkit-transition: $property $duration $mode $delay;
+	-moz-transition: $property $duration $mode $delay;
+	-ms-transition: $property $duration $mode $delay;
+	-o-transition: $property $duration $mode $delay;
+	transition: $property $duration $mode $delay;
+}
+
+@mixin blur($blur) {
+	-webkit-filter: blur($blur);
+	-moz-filter: blur($blur);
+	-ms-filter: blur($blur);
+	-o-filter: blur($blur);
+	filter: blur($blur);
+}
+
+/* PLACEHOLDERS */
+%transition {
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
